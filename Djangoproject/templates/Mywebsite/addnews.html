@@ -1,0 +1,26 @@
+{% extends 'Mywebsite/header.html' %}
+
+{% block content %}
+<br>
+<h1>
+    เพิ่มข้อมูลข่าวสาร
+</h1>
+<form action="{% url 'result' %}" method="post">
+    {% csrf_token %}
+    <div class='form-group'>
+        <label for="">ชื่อข่าวสาร</label>
+        <input type="text" class="form-control" name="name_news" >
+    </div>
+    <div class='form-group'>
+        <label for="">รายละเอียดข่าวสาร</label>
+        <textarea type="text" class="form-control" name="news_detail" ></textarea>
+    </div>
+    <div>
+    <label class="form-label" for="customFile">Default file input example</label>
+    <input type="file" class="form-control" id="customFile" />
+    </div>
+    <br>
+    <input type="submit" value="บันทึก" class="btn btn-success">
+</form>
+
+{% endblock %}
